@@ -1,9 +1,0 @@
-<h1>C'est la bonne</h1>
-
-
-<% if current_user != nil %>
-  Utilisateur connecté
-<% end %>
-
-<p><%= link_to "Connexion", new_user_session_path %></p>
-<p><%= link_to "Déconnexion", destroy_user_session_path %></p>      

@@ -1,5 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
+<% if current_user != nil %>
+  <p>Connecté -> <%= link_to "Déconnexion", destroy_user_session_path %></p>
+<% else %>
+  <p>Déconnecté -> <%= link_to "Connexion", new_user_session_path %></p> 
+<% end %>
+
 <h1>Items</h1>
 
 <div id="items">
