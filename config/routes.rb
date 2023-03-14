@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'carts/destroy'
-  get 'carts/:id', to: 'carts#show', as: 'panier'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
   # root "articles#index"
 
@@ -10,4 +7,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   get '/contact', to: 'static#contact'
+
+  get 'carts/:id', to: 'carts#show', as: 'panier'
+
+  get 'line_carts/show'
+  post 'line_carts/create' => "line_carts#create"
+  get 'line_carts/:id/add' => "line_carts#add_quantity", as: "line_cart_add"
+  get 'line_carts/:id/reduce' => "line_carts#reduce_quantity", as: "line_cart_reduce"
 end
