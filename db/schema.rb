@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_175548) do
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.float "price"
+    t.decimal "price", precision: 6, scale: 2
     t.string "image_url"
     t.bigint "category_id"
     t.datetime "created_at", null: false
@@ -69,13 +69,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_175548) do
     t.string "city"
     t.string "zip_code"
     t.boolean "is_admin?"
-    t.bigint "cart_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_users_on_cart_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
