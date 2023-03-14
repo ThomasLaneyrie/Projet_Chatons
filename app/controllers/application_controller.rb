@@ -12,10 +12,10 @@ class ApplicationController < ActionController::Base
 
     def initialize_cart
       if current_user != nil
-			@cart =	Cart.where(user_id: current_user.id).last
+			@current_cart =	Cart.where(user_id: current_user.id).last
 								
-					if @cart == nil
-						@cart = Cart.create(user_id: current_user.id)
+					if @current_cart == nil
+						@current_cart = Cart.create(user_id: current_user.id)
 					end
 			end
     end
