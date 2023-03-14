@@ -5,7 +5,7 @@ class Cart < ApplicationRecord
   has_many :line_carts
   has_many :items, through: :line_carts
 
-  #suite definition opur calculer le total
+  # suite definition opur calculer le total
 
   def sub_total
     sum = 0

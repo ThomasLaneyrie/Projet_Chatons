@@ -5,5 +5,5 @@ class LineCart < ApplicationRecord
   #alcul du total le reste dans le modele cart
   def total_price
     self.quantity * self.item.price
-  end
+  end  
 end
