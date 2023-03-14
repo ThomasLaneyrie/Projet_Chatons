@@ -158,16 +158,11 @@
   <p>Déconnecté -> <%= link_to "Connexion", new_user_session_path %></p> 
 <% end %>
 
-    <div id="items">
-    
-      <%= render item %>
-      <p>
-        <%= link_to "Show this item", item %>
-      </p>
-    <% end %>
-  </div>
-  
-  <%= link_to "New item", new_item_path %>
+  <% if @current_cart != nil %>
+  <%= link_to "aller au panier", panier_path(@current_cart.id) %>
+  <% end %>
+
+<h1>Items</h1>
 
   <% @items.each do |item| %>
 
