@@ -76,14 +76,16 @@
               </form>
           </div>
           <div class="col-lg-3 col-6 text-right">
-              <a href="" class="btn border">
+              <a href="">
                   <i class="fas fa-heart text-primary"></i>
                   <span class="badge">0</span>
               </a>
-              <% if @current_cart != nil %>
-              <%= link_to "panier", panier_path(@current_cart.id), class:"btn border"%>
-                  <i class="fas fa-shopping-cart text-primary"></i>
-                  <span class="badge">0</span>
+              <% if @current_cart == nil %>
+              <%= link_to "", new_user_session_path, class: "fas fa-shopping-cart text-primary" %>
+              <span class="badge">0</span>
+              <% else %>
+              <%= link_to "",  panier_path(@current_cart.id), class: "fas fa-shopping-cart text-primary" %>
+              <span class="badge"><%= @current_cart.line_carts.count %> </span>
               <% end %>
           </div>
       </div>
@@ -131,17 +133,9 @@
                   </button>
                   <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                       <div class="navbar-nav mr-auto py-0">
-                          <a href="index.html" class="nav-item nav-link">Home</a>
-                          <a href="shop.html" class="nav-item nav-link">Shop</a>
-                          <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-                          <div class="nav-item dropdown">
-                              <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
-                              <div class="dropdown-menu rounded-0 m-0">
-                                  <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                  <a href="checkout.html" class="dropdown-item">Checkout</a>
-                              </div>
-                          </div>
-                          <a href="contact.html" class="nav-item nav-link">Contact</a>
+                          <%= link_to "Home", items_path, class: "nav-item nav-link" %>
+
+                          <%= link_to "Contact", contact_path, class: "nav-item nav-link" %>
                       </div>
                       <div class="navbar-nav ml-auto py-0">
                       <% if @current_user == nil %>
@@ -149,7 +143,15 @@
                           <%= link_to "Register", new_user_registration_path, class: "nav-item nav-link" %>
                       <% else %>
                           <%= link_to "Log out", destroy_user_session_path, class: "nav-item nav-link" %>
+                          <div class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">My account</a>
+                          <div class="dropdown-menu rounded-0 m-0">
+                              <a href="cart.html" class="dropdown-item">Shopping Cart</a>
+                              <a href="checkout.html" class="dropdown-item">Checkout</a>
+                          </div>
                       <%end%>
+                    
+                  </div>
                       </div>
                   </div>
               </nav>
