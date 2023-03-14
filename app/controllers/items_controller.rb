@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
 
   # POST /items or /items.json
   def create
+    item_params["category_id"] = item_params["category_id"].to_i
     @item = Item.new(item_params)
 
     respond_to do |format|
@@ -65,6 +66,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:title, :description, :price, :image_url)
+      params.require(:item).permit(:title, :description, :price, :image_url, :category_id)
     end
 end
