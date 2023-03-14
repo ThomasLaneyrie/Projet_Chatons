@@ -5,5 +5,5 @@ class Cart < ApplicationRecord
   has_many :line_carts
   has_many :items, through: :line_carts
 
-  validates :order, uniqueness: true
+  # validates :order, uniqueness: true
 end
