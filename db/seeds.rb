@@ -8,11 +8,14 @@
 User.destroy_all
 Category.destroy_all
 Item.destroy_all
+Cart.destroy_all
+Order.destroy_all
+LineCart.destroy_all
 
 nb_cart = 10
 nb_item = 10
 nb_category = 1
-nb_line_cart = 10
+nb_line_cart = 20
 nb_order = 10
 nb_user = 10
 
@@ -76,23 +79,25 @@ end
 
 #seeding des orders "commandes aprés panier"
 
+	i = 0
 	nb_order.times do |x|
 		order = Order.create(
 			stripe_id: "1",
-			user_id: rand(1..10),
-			cart_id: rand(1..10),
+			user_id: users[rand(0..nb_user-1)].id,
+			cart: Cart.all[i],
 		)
 		orders << order
 		puts "Seeding order nb#{x}"
+		i = i + 1
 	end
 	
 #seeding des line_carts "table de jointure"
 
 	nb_line_cart.times do |x|
-		line_cart = Line_cart.create(
+		line_cart = LineCart.create(
 			quantity: rand(1..10),
-			cart_id: cart[rand(0..nb_cart-1)].id,
-			item_id: rand(1..10),
+			cart_id: carts[rand(0..nb_cart-1)].id,
+			item_id: items[rand(0..nb_item-1)].id,
 		)
 		line_carts << line_cart
 		puts "Seeding line_cart nb#{x}"
