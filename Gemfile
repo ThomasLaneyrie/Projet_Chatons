@@ -6,6 +6,11 @@ ruby "3.0.0"
 # Gems supps
 gem 'devise'
 gem 'table_print'
+gem 'stripe'
+gem 'dotenv-rails'
+gem 'pry'
+gem 'mailjet'
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -57,6 +62,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
+gem "letter_opener", :group => :development
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
