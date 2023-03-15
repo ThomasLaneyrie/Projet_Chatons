@@ -8,13 +8,21 @@ Rails.application.routes.draw do
   resources :items
 
   get 'carts/:id', to: 'carts#show', as: 'panier'
+  resources :carts, only: [:show] do
+    scope '/checkout' do
+      post 'create', to: 'checkout#create', as: 'checkout_create'    
+      get 'success', to: 'checkout#success', as: 'checkout_success'
+      get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'  
+    end
+  end
 
-  get 'line_carts/show'
-  post 'line_carts/create' => "line_carts#create"
+  resources :orders, only: [:create, :index, :show]
+  resources :line_carts, only: [:create, :destroy]
   get 'line_carts/:id/add' => "line_carts#add_quantity", as: "line_cart_add"
   get 'line_carts/:id/reduce' => "line_carts#reduce_quantity", as: "line_cart_reduce"
 
-  #Navbar 
+  # Navbar 
   get '/contact', to: 'static#contact'
   get '/Home', to: 'items#contactindex'
+  
 end

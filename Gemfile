@@ -6,6 +6,9 @@ ruby "3.0.0"
 # Gems supps
 gem 'devise'
 gem 'table_print'
+gem 'stripe'
+gem 'dotenv-rails'
+gem 'pry'
 gem 'mailjet'
 
 

@@ -23,4 +23,5 @@ class LineCartsController < ApplicationController
     end
     redirect_to panier_path(@line_cart.cart)
   end
+  
 end
