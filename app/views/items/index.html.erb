@@ -39,7 +39,14 @@
             <h5 class="card-title"> <%= item.title %></h5>
             <p class="card-text">$ <%= item.price %> </p>
             <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
+
+              <%= button_to "Add to cart", line_carts_path(:item_id => item.id) %>
+              <% if @current_cart.line_carts.find_by(item: item) != nil %>
+              <%= @current_cart.line_carts.find_by(item: item).quantity %>
+              <% end %>
+
+              
+
               <%= link_to "More", item_path(item), class: "btn btn-light shadow-0 text-primary pt-2 border border-white"%>
               <%# <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a> %>
             </div>
