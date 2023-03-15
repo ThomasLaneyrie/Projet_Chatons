@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
 
   # GET /items/1 or /items/1.json
   def show
-    @current_cart = current_cart
   end
 
   # GET /items/new
