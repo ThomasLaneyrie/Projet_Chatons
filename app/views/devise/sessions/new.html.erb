@@ -1,30 +1,58 @@
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-<link rel="stylesheet" href="styles.css">
+<style>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
 
-<div class="conteneur">
-  <div id="bdg" class="boite">
-    <div class="boite-contenu">
-      <div class="centrer"><br>
-        <span onclick="document.getElementById('bdg').style.display='none'" class="bouton tailleL transparent positionHautDroit" title="Close Modal">X</span>
-        <img src="imagelogo.png" alt="Avatar" style="width:30%" class="cercle margeHaut">
-      </div>
+.form-container form {
+  width: 300px; /* adjust as needed */
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
 
-      <form class="conteneur" action="index.htm">
-        <div class="section">
-          <label><b>Nom d'utilisateur</b></label>
-          <input class="zoneSaisie margeBas" placeholder="Taper votre nom d'utilisateur" type="text" name="nomUtil" required>
-          <label><b>Mot de passe</b></label>
-          <input class="zoneSaisie" type="password" placeholder="Taper votre mot de passe" name="mdp" required>
-		  <button class="bouton bloc bleu section decalage" type="submit">Identification</button>
-          <input class="caseCocher margeHaut" type="checkbox" checked="checked"> Se souvenir de moi
-        </div>
-      </form>
+.actions {
+  margin-top: 10px;
+}
 
-      <div class="conteneur bordureHaut decalage16 grisClair">
-        <button onclick="document.getElementById('bdg').style.display='none'" type="button" class="bouton rouge">Annuler</button>
-        <span class="droite decalage"><a href="#">Mot de passe oublié ?</a></span>
-      </div>
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+</style>
 
+<div class="form-container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="header">
+      <h1>Log in</h1>
     </div>
-  </div>
-  </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>
