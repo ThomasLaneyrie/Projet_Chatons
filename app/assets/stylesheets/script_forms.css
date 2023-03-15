@@ -1,0 +1,22 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.form-container form {
+  width: 300px; /* adjust as needed */
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+
