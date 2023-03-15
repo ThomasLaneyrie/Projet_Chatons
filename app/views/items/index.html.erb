@@ -1,19 +1,22 @@
+<% if @current_user == nil || @current_user.first_name == nil %>
+  <% user_name = "" %>
+<% else %>
+  <% user_name = @current_user.first_name %>
+<% end %>
+  
   <!-- Jumbotron -->
-  <div class="bg-primary text-white py-5">
+  <div class="bg-primary text-black py-5">
     <div class="container py-5">
       <h1>
-        Best products & <br />
-        brands in our store
+       Ready to see the best kitty Snaps <%= user_name.capitalize %> ?<br />
       </h1>
       <p>
-        Trendy Products, Factory Prices, Excellent Service
+        Chunks, Cute eyes, extra something, we hve it !
       </p>
-      <button type="button" class="btn btn-outline-light">
-        Learn more
-      </button>
-      <button type="button" class="btn btn-light shadow-0 text-primary pt-2 border border-white">
-        <span class="pt-1">Purchase now</span>
-      </button>
+      <% if @current_user == nil %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-light" %>
+      <%= link_to "I'm not a member...yet", new_user_registration_path, class: "btn btn-light shadow-0 text-primary pt-2 border border-white" %>
+      <% end %>
     </div>
   </div>
 
@@ -34,10 +37,10 @@
           <img src=<%= item.image_url %> class="card-img-top" style="aspect-ratio: 1 / 1" />
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"> <%= item.title %></h5>
-            <p class="card-text"><%= item.price %></p>
+            <p class="card-text">$ <%= item.price %> </p>
             <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
               <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <%= link_to "See details", item_path(item), class: "btn btn-primary shadow-0 me-1"%>
+              <%= link_to "More", item_path(item), class: "btn btn-light shadow-0 text-primary pt-2 border border-white"%>
               <%# <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a> %>
             </div>
           </div>
