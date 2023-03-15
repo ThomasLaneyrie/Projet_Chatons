@@ -6,6 +6,7 @@ ruby "3.0.0"
 # Gems supps
 gem 'devise'
 gem 'table_print'
+gem "jquery-rails"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
