@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   get 'line_carts/:id/reduce' => "line_carts#reduce_quantity", as: "line_cart_reduce"
 
   # Navbar 
+  resources :users
   get '/contact', to: 'static#contact'
   get '/Home', to: 'items#contactindex'
+
   
 end

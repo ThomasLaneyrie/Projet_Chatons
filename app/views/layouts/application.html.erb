@@ -144,6 +144,7 @@
                           <div class="dropdown-menu rounded-0 m-0">
                               <a href="cart.html" class="dropdown-item">Shopping Cart</a>
                               <a href="checkout.html" class="dropdown-item">Checkout</a>
+                              <%= link_to "Profile",user_path(current_user.id), class:"dropdown-item" %>
                           </div>
                       <%end%>
                     
