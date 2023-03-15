@@ -2,5 +2,5 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :cart
 
-  validates :cart, uniqueness: true
+  # validates :cart, uniqueness: true       COMMENTIRE TEMPORAIRE
 end
