@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   post 'line_carts/create' => "line_carts#create"
   get 'line_carts/:id/add' => "line_carts#add_quantity", as: "line_cart_add"
   get 'line_carts/:id/reduce' => "line_carts#reduce_quantity", as: "line_cart_reduce"
+
+  #Navbar 
+  get '/contact', to: 'static#contact'
+  get '/Home', to: 'items#contactindex'
 end
