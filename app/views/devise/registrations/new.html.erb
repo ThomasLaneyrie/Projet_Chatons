@@ -1,6 +1,33 @@
-<h2>Sign up</h2>
+<style>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
 
+.form-container form {
+  width: 300px; /* adjust as needed */
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+</style>
+<div class="form-container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<h1>Sign up</h1>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -24,6 +51,7 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
 
 <%= render "devise/shared/links" %>
+<% end %>
+</div>
