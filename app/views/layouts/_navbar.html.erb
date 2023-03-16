@@ -16,15 +16,6 @@
                             <a href="" class="dropdown-item">Baby's Dresses</a>
                         </div>
                     </div>
-                    <a href="" class="nav-item nav-link">Shirts</a>
-                    <a href="" class="nav-item nav-link">Jeans</a>
-                    <a href="" class="nav-item nav-link">Swimwear</a>
-                    <a href="" class="nav-item nav-link">Sleepwear</a>
-                    <a href="" class="nav-item nav-link">Sportswear</a>
-                    <a href="" class="nav-item nav-link">Jumpsuits</a>
-                    <a href="" class="nav-item nav-link">Blazers</a>
-                    <a href="" class="nav-item nav-link">Jackets</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
                 </div>
             </nav>
         </div>
@@ -52,8 +43,10 @@
                         <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">My account</a>
                         <div class="dropdown-menu rounded-0 m-0">
                              <%= link_to "Profile",user_path(current_user.id), class:"dropdown-item" %>
-                             <%= link_to "Edit Profile", panier_path(@current_cart.id), class:"dropdown-item" %> 
-                             <%= link_to "Shopping Cart", panier_path(@current_cart.id), class:"dropdown-item" %>    
+                             <%= link_to "Shopping Cart", panier_path(@current_cart.id), class:"dropdown-item" %>
+                             <%= link_to "Edit Info", edit_user_path(@current_user.id), class:"dropdown-item" %> 
+                             <%= link_to "Account Settings", edit_user_registration_path, class:"dropdown-item" %> 
+                              
                             <a href="checkout.html" class="dropdown-item">Checkout</a>    
                         </div>
                     <%end%>
