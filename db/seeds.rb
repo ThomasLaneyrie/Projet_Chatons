@@ -27,6 +27,7 @@ orders = []
 users = []
 
 #seeding des users "creation des users"
+User.create(email:"admin@admin.com", password:"123456", is_admin?: true)
 
 nb_user.times do |x|
 	user = User.create(
@@ -82,9 +83,9 @@ end
 	i = 0
 	nb_order.times do |x|
 		order = Order.create(
-			stripe_id: "1",
+			stripe_id: "stripe_id_random",
 			user_id: users[rand(0..nb_user-1)].id,
-			cart: Cart.all[i],
+			cart: carts[i],
 		)
 		orders << order
 		puts "Seeding order nb#{x}"
