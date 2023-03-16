@@ -15,4 +15,8 @@ class Cart < ApplicationRecord
     return sum
   end
 
+  def to_param
+    friendly_url = "mon panier"
+  end
+  
 end
