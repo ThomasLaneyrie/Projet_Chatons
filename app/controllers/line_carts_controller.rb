@@ -1,4 +1,6 @@
 class LineCartsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def create
       # trouver un produit et le panier courant
       chosen_item = Item.find(params[:item_id])
@@ -13,7 +15,6 @@ class LineCartsController < ApplicationController
     		else
       		@line_cart = LineCart.new
 					@line_cart.quantity = 1
-
       		@line_cart.cart = current_cart
       		@line_cart.item = chosen_item
     	end

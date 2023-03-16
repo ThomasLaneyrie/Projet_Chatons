@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
-
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :show]
+  before_action :is_your_current_cart?, only: [:show]
 
   def show
     @cart = Cart.find(params[:id])

@@ -24,6 +24,4 @@ Rails.application.routes.draw do
   resources :users
   get '/contact', to: 'static#contact'
   get '/Home', to: 'items#contactindex'
-
-  
 end
