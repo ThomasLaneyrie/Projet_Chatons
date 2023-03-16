@@ -8,7 +8,7 @@ class Order < ApplicationRecord
   # validates :cart, uniqueness: true      
   
   def order_mail
-	  UserMailer.order_mail(self).deliver_now
+	  UserMailer.purchase_mail(self).deliver_now
 	  AdminMailer.order_mail(self).deliver_now
   end
   
