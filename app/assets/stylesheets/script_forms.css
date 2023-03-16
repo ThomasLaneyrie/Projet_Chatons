@@ -19,4 +19,13 @@
   margin-top: 10px;
 }
 
+.edit-form-container form {
+  width: 70%; /* adjust as needed */
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #fcdabe;
+  border-radius: 1px;
+  background-color: #fff;
+}
+
 

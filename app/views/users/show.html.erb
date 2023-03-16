@@ -6,7 +6,7 @@
           <div class="rounded-top text-white d-flex flex-row" style="background-color: FFFF; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
             <%= image_tag "empty-profile.png", class: "img-fluid img-thumbnail mt-4 mb-2", style: "width: 150px" %>
-              <%= button_tag "Edit profile", type: "button", class: "btn btn-primary shadow-0 me-1", "data-mdb-ripple-color": "dark" %>
+              <%=link_to "Edit profile", edit_user_path(@user.id), type: "button", class: "btn btn-primary shadow-0 me-1", "data-mdb-ripple-color": "dark" %>
             </div>
             <div class="ms-3" style="margin-top: 130px;">
               <h5><%= @user.first_name%> <%= @user.last_name%></h5>
@@ -18,7 +18,12 @@
           <div class="p-4 text-black" style="background-color: #FFFAF4 ;">
             <div class="d-flex justify-content-end text-center py-1">
               <div>
-                <p class="mb-1 h5">253</p>
+              <% @total_items = 0 %>
+              <% total_items = LineCart.joins(:cart).where(carts: { user_id: @current_user.id }) %>
+                <% total_items.each do |item| %>
+                    <% @total_items+= item.quantity %>
+                <% end %>
+                <p class="mb-1 h5"><%= @total_items  %></p>
                 <p class="small text-muted mb-0">Photos</p>
               </div>
             </div>
