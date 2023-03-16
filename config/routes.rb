@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   devise_for :users
-  resources :items
-
+  resources :items, param: "title"
   get 'carts/:id', to: 'carts#show', as: 'panier'
   resources :carts, only: [:show] do
     scope '/checkout' do
