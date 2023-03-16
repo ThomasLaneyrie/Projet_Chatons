@@ -1,13 +1,14 @@
 class AdminMailer < ApplicationMailer
 
-	def order_mail(order)
+	def order_email(order)
 		@order = order
-		@cart = @order.user.cart
-		admins = User.all.select{ |user| user.is_admin == true }
-		puts admins
-		admins.each do |admin|
-			mail(to: admin.email, subject: "Nouvelle commande")
-		end
+		@cart = @order.cart
+		@user = @order.user
+	
+		@admin = User.find_by(is_admin: true)
+
+		mail(to: @admin.email, subject: 'Nouvelle commande')
+	
 	end
 
 end
