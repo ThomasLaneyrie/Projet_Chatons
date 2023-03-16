@@ -8,7 +8,9 @@
           <div class="rounded-top text-white d-flex flex-row" style="background-color: FFFF; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
             <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar, alt: 'avatar' %>
+              <%= image_tag @user.avatar, alt: 'avatar' %>
+            <% else %>
+               <img src="/empty-profile.png" alt="photo de profil">
             <%end%>
 
             <%=link_to "Edit profile", edit_user_path(@user.id), type: "button", class: "btn btn-primary shadow-0 me-1", "data-mdb-ripple-color": "dark" %>
