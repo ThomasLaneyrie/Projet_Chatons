@@ -12,7 +12,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :zip_code
       t.boolean :is_admin?
-      t.belongs_to :cart, index: true
 
       ## Recoverable
       t.string   :reset_password_token

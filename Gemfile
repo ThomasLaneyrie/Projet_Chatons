@@ -6,6 +6,9 @@ ruby "3.0.0"
 # Gems supps
 gem 'devise'
 gem 'table_print'
+gem 'stripe'
+gem 'dotenv-rails'
+gem 'pry'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -74,3 +77,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "faker", "~> 3.1"
