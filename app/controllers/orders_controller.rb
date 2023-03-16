@@ -4,13 +4,7 @@ class OrdersController < ApplicationController
   
   def show
     @order = Order.find(params[:id])
+    @cart = @order.cart
     @order_line_carts = @order.cart.line_carts
-
-    @order_line_carts.each_with_index do |line_cart, index|
-      line_cart.quantity
-      item = line_cart.item
-      item.title
-      item.price
-      end
   end
 end

@@ -1,5 +1,10 @@
+
 <div class="edit-form-container">
+<div class="text-center mb-4">
+<h1> Update Info <h1>
+</div>
 <div class="container-fluid pt-4 d-flex justify-content-center align-items-center">
+
   <%= form_with(model: @user, local: true, class: "row") do |form| %>
     <div class="form-group col-sm-5">
       <%= form.label :first_name %>
@@ -33,16 +38,16 @@
 </div>
 
 <div class="container-fluid pt-4 d-flex justify-content-center align-items-center">
-<h3> Changer d'avatar ? </h3>
+<h3> Wanna change your avatar ? </h3>
 </div>
 <div class="edit-form-container">
 <div class="container-fluid pt-4 d-flex justify-content-center align-items-center">
 <%= form_tag user_avatars_path(@user), multipart: true do %>
   <span class="btn btn-primary btn-file">
-    Choisis ton image
+    Chose your avatar
     <%= file_field_tag :avatar %>
   </span>
-  <%= submit_tag "mettre à jour", class: "btn btn-primary"%>
+  <%= submit_tag "Update", class: "btn btn-primary"%>
 <% end %>
 </div>
 </div>

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @orders = @user.orders
-      
       end
     
       def new
@@ -28,4 +27,5 @@ class UsersController < ApplicationController
       def user_params
         params.require(:user).permit(:email, :first_name, :last_name, :address, :city, :zip_code)
       end
+      
 end

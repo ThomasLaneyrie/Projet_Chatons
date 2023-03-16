@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :show]
+  before_action :cart_belongs_to_you?, only: [:show]
   before_action :is_your_current_cart?, only: [:show]
 
   def show
