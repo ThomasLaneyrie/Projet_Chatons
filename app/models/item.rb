@@ -8,4 +8,9 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 } 
   validates :description, presence: true   
   validates :image_url, presence: true
+
+  def to_param
+    title
+  end
+  
 end
