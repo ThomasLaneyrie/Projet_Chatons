@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "items#index"
   devise_for :users
   resources :items, param: "title"
-  get 'carts/:id', to: 'carts#show', as: 'panier'
+  get 'carts/:id', to: 'carts#show'
   resources :carts, only: [:show] do
     scope '/checkout' do
       post 'create', to: 'checkout#create', as: 'checkout_create'    
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'line_carts/:id/reduce' => "line_carts#reduce_quantity", as: "line_cart_reduce"
 
   # Navbar 
-  resources :users, path_names: { show: 'profil' }
+  resources :users
   get '/contact', to: 'static#contact'
   get '/Home', to: 'items#contactindex'
 
