@@ -7,20 +7,21 @@
 <br>
 <br>
 <h3>Recapitulatif de votre commande</h3>
-
-    
-    <% @order_line_carts.each_with_index do |line_cart, index| %>
+<br>
+<tr><p><strong>Prix total de la commande : <%= @order.cart.sub_total%>€</strong></p></tr>
+<% @order_line_carts.each_with_index do |line_cart, index| %>
+        <p style="border: 1px solid black; padding: 10px;" >
         <table>
         <tr><%item = line_cart.item%></tr>
         <br>
-        <tr><p>Titre : <%= item.title%></p></tr>
+        <tr><p><strong>Titre : <%= item.title%></strong></p></tr>
         <br>
-        <tr><p>Quantité :<%=line_cart.quantity%></p></tr>
+        <tr><p><strong>Quantité :<%=line_cart.quantity%></strong></p></tr>
         <br>
-        <tr><p>Prix :<%= item.price%></p></tr>
+        <tr><p><strong>Prix unitaire:<%= item.price%>€</strong></p></tr>
+        <br>
         </table>
+        </p>
     <% end %>
-    
-
 </center>
     
