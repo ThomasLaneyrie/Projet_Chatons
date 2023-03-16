@@ -23,7 +23,7 @@
   width: 70%; /* adjust as needed */
   max-width: 100%;
   padding: 20px;
-  border: 1px solid #fcdabe;
+  border: 1px solid #ffff;
   border-radius: 1px;
   background-color: #fff;
 }
@@ -33,4 +33,34 @@
   ;
 }
 
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.edit-form-container {
+  width: 100%; /* adjust as needed */
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #fcdabe;
+  border-radius: 1px;
+  background-color: #fff;
+}
+
+.profile-top-section {
+  width: 100%; /* adjust as needed */
+  padding: 20px;
+  border: transparent;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.orders-profile {
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
 
