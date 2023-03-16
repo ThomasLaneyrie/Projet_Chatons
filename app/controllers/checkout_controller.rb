@@ -28,11 +28,11 @@ class CheckoutController < ApplicationController
     @cart = Cart.find(params[:cart_id])
     @order = Order.new(cart_id:@cart.id, user:current_user,stripe_id:@session.id)   
     if @order.save
-      @cart.order_id = @order.id
-      @cart.save 
-      @cart = Cart.create(user_id: current_user.id)
-      redirect_to order_path(@order.id)
-      flash[:success] = "Le payement a été réalisé avec succès !"
+       @cart.order_id = @order.id
+       @cart.save 
+       @cart = Cart.create(user_id: current_user.id)
+       redirect_to order_path(@order.id)
+       flash[:success] = "Le payement a été réalisé avec succès !"
     else
       redirect_to panier_path(@cart.id)
       flash[:danger] = "Ton payement est bien passé mais il y a un problème pour enregistrer ta participation. Contactez-nous"
