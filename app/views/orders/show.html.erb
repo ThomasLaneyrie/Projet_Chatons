@@ -1,2 +1,26 @@
-<h1>Order#show</h1>
-<p>Find me in app/views/order/show.html.erb</p>
+<center>
+<br>
+<br>
+<h1>Merci pour votre commande</h1>
+<p>D'ici quelques minutes, vous allez recevoir un mail de confirmation.</p>
+<p><strong>On espère vous revoir bientôt !</strong></p>
+<br>
+<br>
+<h3>Recapitulatif de votre commande</h3>
+
+    
+    <% @order_line_carts.each_with_index do |line_cart, index| %>
+        <table>
+        <tr><%item = line_cart.item%></tr>
+        <br>
+        <tr><p>Titre : <%= item.title%></p></tr>
+        <br>
+        <tr><p>Quantité :<%=line_cart.quantity%></p></tr>
+        <br>
+        <tr><p>Prix :<%= item.price%></p></tr>
+        </table>
+    <% end %>
+    
+
+</center>
+    
