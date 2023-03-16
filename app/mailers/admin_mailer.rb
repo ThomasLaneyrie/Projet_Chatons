@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-
+  default from: 'zaritus3@hotmail.com'  
 	def order_mail(order)
 		
 		@order = order
