@@ -24,4 +24,10 @@ Rails.application.routes.draw do
   resources :users
   get '/contact', to: 'static#contact'
   get '/Home', to: 'items#contactindex'
+
+  #active storage
+  resources :users, only: [:show] do
+  resources :avatars, only: [:create]
+  end
+
 end

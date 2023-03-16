@@ -31,3 +31,20 @@
   <% end %>
 </div>
 </div>
+
+<div class="container-fluid pt-4 d-flex justify-content-center align-items-center">
+<h3> Changer d'avatar ? </h3>
+</div>
+<div class="edit-form-container">
+<div class="container-fluid pt-4 d-flex justify-content-center align-items-center">
+<%= form_tag user_avatars_path(@user), multipart: true do %>
+  <span class="btn btn-primary btn-file">
+    Choisis ton image
+    <%= file_field_tag :avatar %>
+  </span>
+  <%= submit_tag "mettre à jour", class: "btn btn-primary"%>
+<% end %>
+</div>
+</div>
+
+
