@@ -8,7 +8,7 @@
   <div class="bg-primary text-black py-5">
     <div class="container py-5">
       <h1>
-       Bienvenue cher <%= user_name.capitalize %> au sein du C.C.C !<br />
+       Bienvenue <%= user_name.capitalize %> au sein du C.C.C !<br />
       </h1>
       <p>
         Le Comité Contre les Chats !
@@ -45,14 +45,14 @@
 
 
 <div class="row">
-<% @items.each do |item| %>
+<% @items.sort.each do |item| %>
  
       <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
         <div class="card w-100 my-2 shadow-2-strong">
           <img src=<%= item.image_url %> class="card-img-top" style="aspect-ratio: 1 / 1" />
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"> <%= item.title %></h5>
-            <p class="card-text">$ <%= item.price %> </p>
+            <p class="card-text"> <%= item.price %> € </p>
             <div class="d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
             
               <%= button_to "Add to cart", line_carts_path(:item_id => item.id), class:"btn btn-primary shadow-0 me-1" %>

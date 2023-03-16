@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
 User.destroy_all
 Category.destroy_all
 Item.destroy_all
@@ -13,7 +15,7 @@ Order.destroy_all
 LineCart.destroy_all
 
 nb_cart = 10
-nb_item = 10
+nb_item = 10     # Laisser 10 car une photo prévue par item !
 nb_category = 1
 nb_line_cart = 20
 nb_order = 10
@@ -25,6 +27,17 @@ categories = []
 line_carts = []
 orders = []
 users = []
+
+images_chat=["https://zoosante.fr/wp-content/uploads/2020/02/collier-anti-puces-chat-300x300.jpg", 
+	"https://letourno.com/wp-content/uploads/2021/02/Nourriture-pour-chat-500x500.jpg",
+	"https://www.art-deco-stickers.fr/968-tm_large_default/sticker-mural-chaton.jpg", 
+	"https://www.monchatestroi.fr/wp-content/uploads/2016/03/Amiti%C3%A9-chien-chat-Chien-qui-l%C3%A8che-un-chat.jpg", 
+	"https://mycrazystuff.com/16610-thickbox/criniere-de-lion-pour-chat.jpg", 
+	"https://www.catedogshop.com/wp-content/uploads/2020/10/jouet-balle-cataire-catnip-herbe-chat-chaton-7-300x300.jpg", 
+	"https://img.le-dictionnaire.com/chat.jpg", 
+	"https://www.ifop.com/wp-content/uploads/2020/07/chiens-et-chats-300x300.jpeg",
+	"https://cdn.shopify.com/s/files/1/0053/2289/9530/products/coussin-chat-rayures-canape_2000x.jpg?v=1652907836",  
+	"https://jardinjasmin.com/wp-content/uploads/2017/01/87729-B-500x500.png"]
 
 #seeding des users "creation des users"
 User.create(email:"admin@admin.com", password:"123456", is_admin?: true)
@@ -55,17 +68,18 @@ end
 	end
 
 #seeding des items "produits"
-
+	i = 0
 	nb_item.times do |x|
 		item = Item.create(
-			title: Faker::ElectricalComponents.active,
+			title: Faker::Creature::Animal.name,
 			description: Faker::Lorem.words(number: 4, exclude_words: 'error'),
 			price: rand(1..20),
-			image_url: 'https://www.art-deco-stickers.fr/968-tm_large_default/sticker-mural-chaton.jpg',
+			image_url: images_chat[i],
 			category: Category.first
 			)
 		items << item
 		puts "Seeding item nb#{x}"
+		i = i + 1
 	end
 
 #seeding des carts "paniers"
