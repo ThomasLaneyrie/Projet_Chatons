@@ -8,7 +8,7 @@
   <div class="bg-primary text-black py-5">
     <div class="container py-5">
       <h1>
-       Bienvenue cher <%= user_name.capitalize %> au sein du C.C.C !<br />
+       Bienvenue <%= user_name.capitalize %> au sein du C.C.C !<br />
       </h1>
       <p>
         Le Comité Contre les Chats !
@@ -45,14 +45,14 @@
 
 
 <div class="row">
-<% @items.each do |item| %>
+<% @items.sort.each do |item| %>
  
       <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
         <div class="card w-100 my-2 shadow-2-strong">
           <img src=<%= item.image_url %> class="card-img-top" style="aspect-ratio: 1 / 1" />
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"> <%= item.title %></h5>
-            <p class="card-text">$ <%= item.price %> </p>
+            <p class="card-text"> <%= item.price %> € </p>
             <div class="d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
             
               <%= button_to "Add to cart", line_carts_path(:item_id => item.id), class:"btn btn-primary shadow-0 me-1" %>
@@ -171,7 +171,7 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <article>
           <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/1.webp" style="object-fit: cover;" height="160" />
+            <img class="rounded w-100" src="https://i.postimg.cc/k5JgmWmH/chat2.png" style="object-fit: cover;" height="160" />
           </a>
           <div class="mt-2 text-muted small d-block mb-1">
             <span>
@@ -187,7 +187,7 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <article>
           <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/2.webp" style="object-fit: cover;" height="160" />
+            <img class="rounded w-100" src="https://i.postimg.cc/hPZkjxTw/chat-3.png"  style="object-fit: cover;" height="160" />
           </a>
           <div class="mt-2 text-muted small d-block mb-1">
             <span>
@@ -203,7 +203,7 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <article>
           <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/3.webp" style="object-fit: cover;" height="160" />
+            <img class="rounded w-100" src="https://i.postimg.cc/J4Xnc1xp/chat1.png" style="object-fit: cover;" height="160" />
           </a>
           <div class="mt-2 text-muted small d-block mb-1">
             <span>
@@ -219,7 +219,7 @@
       <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <article>
           <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/4.webp" style="object-fit: cover;" height="160" />
+            <img class="rounded w-100" src="https://i.postimg.cc/j2dVFhYx/le-gwoupe.png" style="object-fit: cover;" height="160" />
           </a>
           <div class="mt-2 text-muted small d-block mb-1">
             <span>
