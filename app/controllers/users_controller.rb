@@ -20,4 +20,8 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
           end
       end
+      private 
+      def user_params
+        params.require(:user).permit(:email, :first_name, :last_name, :address, :city, :zip_code)
+      end
 end
