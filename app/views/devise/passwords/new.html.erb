@@ -11,8 +11,13 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Reset password" %>
+    <%= f.submit "Reset password", class: "btn btn-primary shadow-0 me-1" %>
   </div>
-<%= render "devise/shared/links" %>
+  <div class=" d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+  <div class="actions">
+     <%= f.submit "Log in", class:"btn btn-primary shadow-0 me-1" %>
+     </div>
+     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light shadow-0 text-primary pt-2 border border-white"%>
+  </div>
 <% end %>
 </div>

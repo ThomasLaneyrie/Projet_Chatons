@@ -7,12 +7,14 @@
 
           <div class="rounded-top text-white d-flex flex-row" style="background-color: FFFF; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-            <%= image_tag "empty-profile.png", class: "img-fluid img-thumbnail mt-4 mb-2", style: "width: 150px" %>
-              <%=link_to "Edit profile", edit_user_path(@user.id), type: "button", class: "btn btn-primary shadow-0 me-1", "data-mdb-ripple-color": "dark" %>
+            <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, alt: 'avatar' %>
+            <%end%>
+
+            <%=link_to "Edit profile", edit_user_path(@user.id), type: "button", class: "btn btn-primary shadow-0 me-1", "data-mdb-ripple-color": "dark" %>
             </div>
             <div class="ms-3" style="margin-top: 130px;">
-              
-              
+
             </div>
           </div>
           <div class="p-4 text-black" style="background-color: #FFFAF4 ;">
@@ -26,7 +28,7 @@
                 <p class="mb-1 h5"><%= @total_items  %></p>
                 <p class="small text-muted mb-0">Photos</p>
               </div>
-            </div>
+              </div>
           </div>
           <div class="card-body p-4 text-black">
             <div class="mb-5">

@@ -47,4 +47,9 @@ class ApplicationController < ActionController::Base
         redirect_to panier_path(@current_cart.id)
       end
     end
+
+    # protected
+    # def configure_permitted_paramters
+    #   devise_parameter
+    # end
   end

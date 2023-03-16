@@ -16,22 +16,13 @@
                             <a href="" class="dropdown-item">Baby's Dresses</a>
                         </div>
                     </div>
-                    <a href="" class="nav-item nav-link">Shirts</a>
-                    <a href="" class="nav-item nav-link">Jeans</a>
-                    <a href="" class="nav-item nav-link">Swimwear</a>
-                    <a href="" class="nav-item nav-link">Sleepwear</a>
-                    <a href="" class="nav-item nav-link">Sportswear</a>
-                    <a href="" class="nav-item nav-link">Jumpsuits</a>
-                    <a href="" class="nav-item nav-link">Blazers</a>
-                    <a href="" class="nav-item nav-link">Jackets</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
                 </div>
             </nav>
         </div>
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>KittySnaps</h1>
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>KittySnap</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -52,9 +43,10 @@
                         <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">My account</a>
                         <div class="dropdown-menu rounded-0 m-0">
                              <%= link_to "Profile",user_path(current_user.id), class:"dropdown-item" %>
-                             <%= link_to "Edit Profile", panier_path(@current_cart.id), class:"dropdown-item" %> 
                              <%= link_to "Shopping Cart", panier_path(@current_cart.id), class:"dropdown-item" %>
-                             "Edit profile", edit_user_path(@user.id)       
+                             <%= link_to "Edit Info", edit_user_path(@current_user.id), class:"dropdown-item" %> 
+                             <%= link_to "Account Settings", edit_user_registration_path, class:"dropdown-item" %> 
+                              
                             <a href="checkout.html" class="dropdown-item">Checkout</a>    
                         </div>
                     <%end%>
