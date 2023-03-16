@@ -4,5 +4,6 @@ class OrdersController < ApplicationController
   
   def show
     @order = Order.find(params[:id])
+    @order_line_carts = @order.cart.line_carts
   end
 end
