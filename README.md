@@ -1,24 +1,15 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Téléchargez, clonez, récupérez comme bon vous semble les fichiers.
 
-Things you may want to cover:
+En local, aller dans le dossier
 
-* Ruby version
+faire un bundle install
 
-* System dependencies
+Lancer un rails db:migrate
 
-* Configuration
+Lancer un rails server et naviguez à partir de http://localhost:3000/
 
-* Database creation
+Ou faites vous plaisir sur https://kwiskas.herokuapp.com/ créez votre profil, achetez des chats, donnez les sous
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...

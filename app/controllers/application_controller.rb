@@ -41,6 +41,7 @@ class ApplicationController < ActionController::Base
 
     def is_your_current_cart?
       if @current_cart == current_user.carts.find(params[:id])
+        binding.pry
         return true
       else
         flash[:danger] = "Impossible d'accéder à un ancien panier, redirection vers votre panier actuel"
