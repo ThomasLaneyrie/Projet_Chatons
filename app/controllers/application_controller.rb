@@ -39,6 +39,15 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def cart_belongs_to_you?
+      if Cart.find(params[:id]).user == current_user
+        return true
+      else
+        flash[:danger] = "Impossible d'accéder à ce panier, redirection vers votre panier"
+        redirect_to panier_path(@current_cart.id)
+      end
+    end
+
     def is_your_current_cart?
       if @current_cart == current_user.carts.find(params[:id])
         binding.pry
